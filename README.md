@@ -1,14 +1,13 @@
 # purescript-prelude
 
-[![Latest release](http://img.shields.io/github/release/purescript/purescript-prelude.svg)](https://github.com/purescript/purescript-prelude/releases)
-[![Build Status](https://travis-ci.org/purescript/purescript-prelude.svg?branch=master)](https://travis-ci.org/purescript/purescript-prelude)
+[![Latest release](http://img.shields.io/github/release/purescript/purescript-prelude.svg)](https://github.com/pure-clj/purescript-prelude/releases)
 
-The PureScript prelude.
+The PureScript prelude (pure-clj version).
 
 ## Installation
 
 ```
-bower install purescript-prelude
+TODO
 ```
 
 ## Documentation

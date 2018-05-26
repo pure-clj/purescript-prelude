@@ -56,7 +56,7 @@ instance showRecordFieldsCons
        )
     => ShowRecordFields (RL.Cons key focus rowlistTail) row where
   showRecordFields _ record
-    = cons (join ": " [ key, show focus ]) tail
+    = _cons (join ": " [ key, show focus ]) tail
     where
       key = reflectSymbol (SProxy :: SProxy key)
       focus = unsafeGet key record :: focus
@@ -67,5 +67,5 @@ foreign import showNumberImpl :: Number -> String
 foreign import showCharImpl :: Char -> String
 foreign import showStringImpl :: String -> String
 foreign import showArrayImpl :: forall a. (a -> String) -> Array a -> String
-foreign import cons :: forall a. a -> Array a -> Array a
+foreign import _cons :: forall a. a -> Array a -> Array a
 foreign import join :: String -> Array String -> String
