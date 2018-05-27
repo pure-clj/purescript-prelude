@@ -7,16 +7,13 @@
   (fn [y]
     (if (zero? y)
       0
-      (if (pos? y)
-        (Math/floor (/ x y))
-        (- (Math/floor (/ x (- y))))))))
+      (quot x y))))
 
 (defn intMod [x]
   (fn [y]
     (if (zero? y)
       0
-      (let [yy (Math/abs y)]
-        (mod (+ (mod x yy) yy) yy)))))
+      (mod x y))))
 
 (defn numDiv [n1]
   (fn [n2]
