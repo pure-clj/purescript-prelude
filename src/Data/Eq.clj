@@ -4,6 +4,13 @@
   (fn [r2]
     (= r1 r2)))
 
+(defn numberEq [n1]
+  (fn [n2]
+    (if (or (Double/isNaN n1)
+            (Double/isNaN n2))
+        false
+        (= n1 n2))))
+
 (defn eqArrayImpl [f]
   (fn [xs]
     (fn [ys]

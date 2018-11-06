@@ -8,3 +8,4 @@
 /clj-output/
 /target/
 package-lock.json
+/src-gen/

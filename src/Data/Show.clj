@@ -9,10 +9,11 @@
 
 (def showStringImpl str)
 
-(defn showArrayImpl [arr]
-  (str "["
-       (s/join ", " arr)
-       "]"))
+(defn showArrayImpl [f]
+  (fn [arr]
+    (str "["
+         (s/join ", " (map f arr))
+         "]")))
 
 (defn _cons [head]
   (fn [tail]
