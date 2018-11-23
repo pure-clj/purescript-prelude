@@ -1,18 +1,18 @@
 (ns Data.EuclideanRing._foreign)
 
-(defn intDegree [x]
+(defn intDegree [^long x]
   (min (Math/abs x) Integer/MAX_VALUE))
 
-(defn intDiv [x]
-  (fn [y]
+(defn intDiv [^long x]
+  (fn [^long y]
     (if (zero? y)
       0
       (if (> y 0)
         (long (Math/floor (/ x y)))
         (long (- (Math/floor (/ x (- y)))))))))
 
-(defn intMod [x]
-  (fn [y]
+(defn intMod [^long x]
+  (fn [^long y]
     (if (zero? y)
       0
       (let [yy (Math/abs y)]
@@ -20,6 +20,6 @@
             (+ yy)
             (mod yy))))))
 
-(defn numDiv [n1]
-  (fn [n2]
+(defn numDiv [^double n1]
+  (fn [^double n2]
     (/ n1 n2)))

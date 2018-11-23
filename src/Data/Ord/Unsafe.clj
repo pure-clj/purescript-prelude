@@ -1,10 +1,12 @@
 (ns Data.Ord.Unsafe._foreign)
 
 (defn- number-compare [lt gt eq x y]
-  (cond
-    (< x y) lt
-    (= x y) eq
-    :else gt))
+  (if (or (Double/isNaN x) (Double/isNaN y))
+    gt
+    (cond
+      (< x y) lt
+      (= x y) eq
+      :else gt)))
 
 (defn unsafeCompareImpl [lt]
   (fn [eq]

@@ -44,7 +44,7 @@ instance eqInt :: Eq Int where
   eq = refEq
 
 instance eqNumber :: Eq Number where
-  eq = refEq
+  eq = numberEq
 
 instance eqChar :: Eq Char where
   eq = refEq
@@ -65,6 +65,7 @@ instance eqRec :: (RL.RowToList row list, EqRecord list row) => Eq (Record row) 
   eq = eqRecord (RLProxy :: RLProxy list)
 
 foreign import refEq :: forall a. a -> a -> Boolean
+foreign import numberEq :: Number -> Number -> Boolean
 foreign import eqArrayImpl :: forall a. (a -> a -> Boolean) -> Array a -> Array a -> Boolean
 
 -- | The `Eq1` type class represents type constructors with decidable equality.

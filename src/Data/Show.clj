@@ -17,7 +17,7 @@
 
 (defn _cons [head]
   (fn [tail]
-    (into [] (concat head tail))))
+    (into [] (concat [head] tail))))
 
 (defn join [sep]
   (fn [xs]
