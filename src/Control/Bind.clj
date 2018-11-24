@@ -2,4 +2,4 @@
 
 (defn arrayBind [arr]
   (fn [f]
-    (mapv f arr)))
+    (vec (mapcat f arr))))
