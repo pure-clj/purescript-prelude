@@ -2,4 +2,4 @@
 
 (defn arrayMap [f]
   (fn [arr]
-    (map f arr)))
+    (mapv f arr)))
